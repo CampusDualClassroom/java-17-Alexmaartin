@@ -1,23 +1,41 @@
 package com.campusdual.classroom;
 
 public class Exercise17 {
-	public static int[] createEmptyIntArray(int positions) {}
+	public static int[] createEmptyIntArray(int positions) {
+		return new int[positions];
+	}
 
-	public static String[] createInitializedStringArray() {}
+	public static String[] createInitializedStringArray() {
+		return new String[] { "1", "2", "3" };
+	}
 
-	public static void populateArray(int[] array, int index, int value) {}
+	public static void populateArray(int[] array, int index, int value) {
+		if (index >= 0 && index < array.length) {
+			array[index] = value;
+		} else {
+			System.out.println("Índice fuera de los límites del array.");
+		}
+	}
 
-	public static int arrayLength(int[] array) {}
+	public static int arrayLength(int[] array) {
+		return array.length;
+	}
 
-	public static void showValue(int[] array, int index) {}
+	public static void showValue(int[] array, int index) {
+		if (index >= 0 && index < array.length) {
+			System.out.println("El valor en el índice " + index + " es: " + array[index]);
+		} else {
+			System.out.println("Índice fuera de los límites del array.");
+		}
+	}
 
 	public static void main(String[] args) {
 		int[] intArray = createEmptyIntArray(3);
-        String[] stringArray = createInitializedStringArray();
+		String[] stringArray = createInitializedStringArray();
 		populateArray(intArray, 0, 10);
 		populateArray(intArray, 1, 9);
 		populateArray(intArray, 2, 8);
 		showValue(intArray, 0);
-		System.out.println(arrayLength(intArray));
+		System.out.println("Longitud del array: " + arrayLength(intArray));
 	}
 }
